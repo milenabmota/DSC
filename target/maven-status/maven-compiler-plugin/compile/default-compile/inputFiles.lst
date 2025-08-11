@@ -1,0 +1,15 @@
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/Comanda.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/Cr_system.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/HibernateUtil.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/Main.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/Pagamento.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/Pedido.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/PerfilUsuario.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/Produto.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/TipoPagamento.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/Usuario.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/ui/AdicionarPedidoDialog.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/ui/ComandasController.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/ui/ComandasView.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/ui/MainUI.java
+/home/milena/NetBeansProjects/cr_system/src/main/java/br/com/cr_system/ui/PainelComandas.java
