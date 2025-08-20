@@ -5,5 +5,3 @@ A disciplina é ministrada pelo professor Paulo Veloso, e o projeto está sendo 
 
 O sistema será uma aplicação desktop em Java com banco de dados MySQL, com foco no controle de comandas em ambientes como bares e restaurantes, 
 incluindo funcionalidades de pedidos, gerenciamento de mesas, pagamentos e geração de relatórios.
-
-🔗 Link para acompanhar o progresso da documentação: https://docs.google.com/document/d/1o1FshoXCY62ml8hRbqRjn_CnGbhFwsaHGz-6cZvlOog/edit?usp=sharing
