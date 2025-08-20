@@ -1,0 +1,59 @@
+produtos
+---------------------------------------------------------------------------------
+
+USE cr_system; -- garante que está usando o banco correto
+
+INSERT INTO produtos (nome, preco, estoque)
+VALUES
+  ('X-Burger',              18.00,  50),
+  ('X-Salada',              20.00,  50),
+  ('X-Bacon',               24.00,  40),
+  ('X-Egg',                 22.00,  40),
+  ('X-Tudo',                28.00,  35),
+  ('Hot Dog',               12.00,  60),
+  ('Porção de Batata',      22.00,  40),
+  ('Porção de Nuggets',     26.00,  30),
+  ('Porção de Onion Rings', 24.00,  30),
+  ('Refrigerante Lata',      7.00, 100),
+  ('Refrigerante 600ml',    10.00,  60),
+  ('Água Mineral',           4.00, 120),
+  ('Suco Natural 300ml',    12.00,  50),
+  ('Cerveja Long Neck',     12.00,  80),
+  ('Milk-shake',            16.00,  25)
+ON DUPLICATE KEY UPDATE
+  preco   = VALUES(preco),
+  estoque = VALUES(estoque);
+
+
+Adicionar admin
+---------------------------------------------------------------------------------------
+INSERT INTO usuarios (login, nome, perfil, senhaHash)
+VALUES (
+    'admin',
+    'Administrador',
+    'ADMIN',
+    '$2a$12$qQ7164eOaPhb3eKykiH9UO1cFD06D6E1xOjcbTDLs9d1/hdg5jPAi'
+);
+
+***********************
+no terminal, rode isso para gerar a hash correspondente a sua senha e copie a hash gerada
+python3 - << 'PY'
+import bcrypt
+h = bcrypt.hashpw(b'root123456', bcrypt.gensalt(12)).decode()
+# jBCrypt às vezes prefere prefixo $2a$; trocamos se vier $2b$/$2y$
+h = h.replace("$2b$", "$2a$").replace("$2y$", "$2a$")
+print(h, "len=", len(h))
+PY
+******************
+no mysql cole o hash gerado no lugar do outro hash mantendo entre aspas simples.
+
+USE cr_system;
+ALTER TABLE usuarios MODIFY COLUMN senhaHash VARCHAR(120) NOT NULL;
+
+UPDATE usuarios
+SET senhaHash = '$2a$12$p.iNFrDm5g68d85Y5UnSbuu8PWXAfJI3oWtV54g16Md912EB6lWXm'
+WHERE login = 'admin';
+
+SELECT login, CHAR_LENGTH(senhaHash) AS len, senhaHash
+FROM usuarios
+WHERE login='admin';

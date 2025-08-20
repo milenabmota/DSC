@@ -8,25 +8,19 @@
     <!-- JDBC / MySQL -->
     <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="hibernate.connection.url">
-      jdbc:mysql://localhost:3306/cr_system?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=America/Sao_Paulo
+      jdbc:mysql://localhost:3306/cr_system?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=America/Sao_Paulo&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;useGeneratedKeys=true
     </property>
     <property name="hibernate.connection.username">cruser</property>
     <property name="hibernate.connection.password">crsenha123</property>
 
     <!-- Hibernate -->
-    <!-- Em Hibernate 6, o dialeto é detectado automaticamente; pode remover.
-         Se quiser manter, tudo bem. -->
-    <!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
-
-    <!-- >>> PERSISTÊNCIA REAL: não recria mais o schema <<< -->
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <!-- alternativas:
-         validate  -> não altera nada, só valida o schema
-         (remover) -> também não altera nada -->
-
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
+
+    <!-- Use getGeneratedKeys (evita SELECT last_insert_id e o erro de coluna id) -->
     <property name="hibernate.jdbc.use_get_generated_keys">true</property>
+    <property name="hibernate.id.new_generator_mappings">true</property>
 
     <!-- Mapeamentos -->
     <mapping class="br.com.cr_system.Produto"/>
